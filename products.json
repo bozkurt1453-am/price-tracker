@@ -1,0 +1,9 @@
+[
+  {
+    "id": "marshall-monitor-iii-anc",
+    "query": "Marshall Monitor III ANC kulaklık",
+    "target_price": 18000,
+    "include_terms": ["marshall", "monitor", "iii", "anc"],
+    "exclude_terms": ["kılıf", "case", "ikinci el", "yenilenmiş"]
+  }
+]
