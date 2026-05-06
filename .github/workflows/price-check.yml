@@ -2,7 +2,7 @@ name: Price check
 
 on:
   schedule:
-    - cron: "0 6,10,17 * * *"
+    - cron: "17 6,10,17 * * *"
   workflow_dispatch:
 
 permissions:
@@ -12,12 +12,15 @@ jobs:
   check-prices:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
     steps:
       - name: Checkout repo
-        uses: uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set up Python
-        uses: uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
