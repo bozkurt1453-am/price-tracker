@@ -281,7 +281,7 @@ def build_email_body(product, top_5, target_price, reason):
     lines.append("")
 
     for i, item in enumerate(top_5, start=1):
-        marker = " ✅ HEDEF ALTI" if item["price"] <= target_price else ""
+        marker = " 👌🏻 18K ALTI ✅, AĞLA SALİH 😭" if item["price"] <= target_price else ""
 
         lines.append(f"{i}. {item['price']:,.0f} TL - {item['source']}{marker}")
         lines.append(f"   Ürün: {item['title']}")
@@ -357,7 +357,7 @@ def main():
         # Yani sadece fiyat düştü diye 18.000 TL üstündeyken mail gitmeyecek.
 
         if should_alert:
-            subject = f"Fiyat alarmı: {product['query']} - {best['price']:,.0f} TL"
+            subject = f"Fiyat alarmı AĞLA SALİH: {product['query']} - {best['price']:,.0f} TL"
             body = build_email_body(product, top_5, target_price, reason)
             send_email(subject, body)
 
