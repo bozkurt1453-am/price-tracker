@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from email.message import EmailMessage
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs, urlencode, urlunparse
+from zoneinfo import ZoneInfo
 
 import requests
 
@@ -361,7 +362,8 @@ def main():
         # Yani sadece fiyat düştü diye 17.500 TL üstündeyken mail gitmeyecek.
 
         if should_alert:
-            subject = f"Fiyat ALARMI❗ AĞLA SALİH😭 : {product['query']} - {best['price']:,.0f} TL"
+            now_text = datetime.now(ZoneInfo("Europe/Istanbul")).strftime("%d.%m.%Y %H:%M")
+            subject = f"Fiyat ALARMI❗ AĞLA SALİH😭 : {product['query']} - {best['price']:,.0f} TL - {now_text}"
             body = build_email_body(product, top_5, target_price, reason)
             send_email(subject, body)
             print("Mail atıldı.")
