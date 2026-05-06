@@ -328,43 +328,34 @@ def main():
         top_5 = offers[:5]
         best = top_5[0]
 
-        previous = state.get(product_id, {})
-        previous_best = previous.get("best_price")
-        last_alert_price = previous.get("last_alert_price")
-
         has_target_price_in_top_5 = any(item["price"] <= target_price for item in top_5)
 
         should_alert = False
         reason = ""
 
         # Yeni kural:
-        # Mail sadece ilk 5 sonuç içinde en az bir ürün hedef fiyatın altındaysa gitsin.
+        # Her çalışmada, ilk 5 sonuç içinde hedef fiyatın altında en az bir ürün varsa mail atsın.
+        # Daha önce mail atılmış mı, aynı fiyat mı, daha yüksek mi diye bakmayacak.
         if has_target_price_in_top_5:
             cheapest_under_target = min(
                 [item for item in top_5 if item["price"] <= target_price],
                 key=lambda x: x["price"]
             )
 
-            if last_alert_price is None or cheapest_under_target["price"] < float(last_alert_price):
-                should_alert = True
-                reason = (
-                    f"İlk 5 sonuç içinde hedef fiyat altı ürün var: "
-                    f"{cheapest_under_target['price']:,.0f} TL <= {target_price:,.0f} TL"
-                )
+            should_alert = True
+            reason = (
+                f"İlk 5 sonuç içinde hedef fiyat altı ürün var: "
+                f"{cheapest_under_target['price']:,.0f} TL <= {target_price:,.0f} TL"
+            )
 
         # Ek kural:
         # Hedef fiyat altına inmemişse mail atma.
-        # Yani sadece fiyat düştü diye 18.000 TL üstündeyken mail gitmeyecek.
+        # Yani sadece fiyat düştü diye 17.500 TL üstündeyken mail gitmeyecek.
 
         if should_alert:
             subject = f"Fiyat alarmı AĞLA SALİH: {product['query']} - {best['price']:,.0f} TL"
             body = build_email_body(product, top_5, target_price, reason)
             send_email(subject, body)
-
-            state.setdefault(product_id, {})
-            state[product_id]["last_alert_price"] = min(
-                item["price"] for item in top_5 if item["price"] <= target_price
-            )
 
         state.setdefault(product_id, {})
         state[product_id]["best_price"] = best["price"]
@@ -377,7 +368,7 @@ def main():
         print(f"{product_id}: en ucuz fiyat = {best['price']} TL, satıcı = {best['source']}")
 
         if has_target_price_in_top_5:
-            print("İlk 5 içinde hedef fiyat altı ürün var.")
+            print("İlk 5 içinde hedef fiyat altı ürün var, mail atıldı.")
         else:
             print("İlk 5 içinde hedef fiyat altı ürün yok, mail atılmadı.")
 
