@@ -315,7 +315,7 @@ def main():
 
     for product in products:
         product_id = product["id"]
-        target_price = float(product.get("target_price", 0))
+        target_price = float(product.get("target_price", 17500))
 
         offers = get_best_offers(product)
 
@@ -332,6 +332,14 @@ def main():
 
         should_alert = False
         reason = ""
+
+        print("")
+        print(f"Ürün: {product_id}")
+        print(f"Hedef fiyat: {target_price:,.0f} TL")
+        print("En ucuz 5 sonuç:")
+
+        for i, item in enumerate(top_5, start=1):
+            print(f"{i}. {item['price']:,.0f} TL - {item['source']}")
 
         # Yeni kural:
         # Her çalışmada, ilk 5 sonuç içinde hedef fiyatın altında en az bir ürün varsa mail atsın.
@@ -356,6 +364,9 @@ def main():
             subject = f"Fiyat alarmı AĞLA SALİH: {product['query']} - {best['price']:,.0f} TL"
             body = build_email_body(product, top_5, target_price, reason)
             send_email(subject, body)
+            print("Mail atıldı.")
+        else:
+            print("İlk 5 içinde hedef fiyat altı ürün yok, mail atılmadı.")
 
         state.setdefault(product_id, {})
         state[product_id]["best_price"] = best["price"]
@@ -364,13 +375,6 @@ def main():
         state[product_id]["best_link"] = best["link"]
         state[product_id]["last_checked_at"] = datetime.now(timezone.utc).isoformat()
         state[product_id]["top_5"] = top_5
-
-        print(f"{product_id}: en ucuz fiyat = {best['price']} TL, satıcı = {best['source']}")
-
-        if has_target_price_in_top_5:
-            print("İlk 5 içinde hedef fiyat altı ürün var, mail atıldı.")
-        else:
-            print("İlk 5 içinde hedef fiyat altı ürün yok, mail atılmadı.")
 
     save_json(STATE_FILE, state)
 
