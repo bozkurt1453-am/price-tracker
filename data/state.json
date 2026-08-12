@@ -1,23 +1,11 @@
 {
   "marshall-monitor-iii-anc": {
-    "best_price": 12509.1,
-    "best_source": "PttAVM.com",
-    "best_title": "Marshall Monitor III ANC Black - TEŞHİR",
-    "best_link": "https://www.pttavm.com/marshall-monitor-iii-anc-black-teshir-p-1445373793?srsltid=AfmBOorNDXjOFtK1Qg0yXL5M-bjnlyP8IGcttagtUZVw3EQdvyElWDhDjyQ",
-    "last_checked_at": "2026-08-11T14:21:14.847246+00:00",
+    "best_price": 15999.0,
+    "best_source": "Amazon.com.tr",
+    "best_title": "Marshall Monitor III ANC Aktif Gürültü Azaltma Bluetooth Kulaklık, 70 Saat Çalma Süresi - Siyah",
+    "best_link": "https://www.amazon.com.tr/Marshall-Monitor-G%C3%BCr%C3%BClt%C3%BC-Bluetooth-Kulakl%C4%B1k/dp/B0DFDT1TWC?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&psc=1&smid=A1UNQM1SR2CHM",
+    "last_checked_at": "2026-08-12T08:21:24.421425+00:00",
     "top_5": [
-      {
-        "title": "Marshall Monitor III ANC Black - TEŞHİR",
-        "source": "PttAVM.com",
-        "price": 12509.1,
-        "price_text": "₺12.509,10",
-        "shipping": "Ücretsiz",
-        "total": "₺12.509,10",
-        "link": "https://www.pttavm.com/marshall-monitor-iii-anc-black-teshir-p-1445373793?srsltid=AfmBOorNDXjOFtK1Qg0yXL5M-bjnlyP8IGcttagtUZVw3EQdvyElWDhDjyQ",
-        "rating": null,
-        "reviews": null,
-        "tag": null
-      },
       {
         "title": "Marshall Monitor III ANC Aktif Gürültü Azaltma Bluetooth Kulaklık, 70 Saat Çalma Süresi - Siyah",
         "source": "Amazon.com.tr",
@@ -37,7 +25,7 @@
         "price_text": "₺15.999,00",
         "shipping": "Ücretsiz",
         "total": "₺15.999,00",
-        "link": "https://www.dr.com.tr/elektronik/marshall-monitor-kblszkustuklklk-siyah/ev-elektronigi/kulakliklar/kablosuz-kulakliklar/urunno=0002143496001?srsltid=AfmBOoobdRGcU6sIGQRuUZxbDEDNFWeVJDcjBpVPWqG7K624CvpJke7dO0k",
+        "link": "https://www.dr.com.tr/elektronik/marshall-monitor-kblszkustuklklk-siyah/ev-elektronigi/kulakliklar/kablosuz-kulakliklar/urunno=0002143496001?srsltid=AfmBOoox57BH4fbB774w9m-wyV5N_6yNJe12QGsOxg0CRfi8LiI9H8ju7Og",
         "rating": null,
         "reviews": null,
         "tag": null
@@ -49,7 +37,7 @@
         "price_text": "₺18.810,00",
         "shipping": "Ücretsiz",
         "total": "₺18.810,00",
-        "link": "https://www.zuhalmuzik.com/marshall-monitor-iii-anc-kulak-ustu-kulaklik-zd1006861?srsltid=AfmBOoq9QXeJB5R52gGz92ujYzmZBPc2G4Cu92QF-uMvUqRBFR6NlfNaG2c",
+        "link": "https://www.zuhalmuzik.com/marshall-monitor-iii-anc-kulak-ustu-kulaklik-zd1006861?srsltid=AfmBOoqdOsJOuvqa8LCPRx5dso-TUKDjNXfTGwqCAMN08Fq8zVx2e8ExC18",
         "rating": null,
         "reviews": null,
         "tag": null
@@ -57,13 +45,25 @@
       {
         "title": "Marshall Monitor III ANC Kulakustu Bluetooth Kulaklik",
         "source": "Trendyol",
-        "price": 19900.0,
-        "price_text": "₺19.900,00",
+        "price": 19899.0,
+        "price_text": "₺19.899,00",
         "shipping": "Ücretsiz",
-        "total": "₺19.900,00",
+        "total": "₺19.899,00",
         "link": "https://www.trendyol.com/marshall/monitor-iii-anc-kulakustu-bluetooth-kulaklik-p-874393723?boutiqueId=61&merchantId=624588&storefrontId=1&countryCode=TR&language=tr&gads=true",
         "rating": null,
         "reviews": null,
+        "tag": null
+      },
+      {
+        "title": "Marshall Monitor III ANC Kablosuz Kulak Üstü Kulaklık Siyah",
+        "source": "MediaMarkt Türkiye",
+        "price": 20499.0,
+        "price_text": "₺20.499,00",
+        "shipping": "Ücretsiz",
+        "total": "₺20.499,00",
+        "link": "https://www.mediamarkt.com.tr/tr/product/_marshall-monitor-iii-anc-kablosuz-kulak-ustu-kulaklik-siyah-1241543.html",
+        "rating": 4.7,
+        "reviews": 10305,
         "tag": null
       }
     ]
